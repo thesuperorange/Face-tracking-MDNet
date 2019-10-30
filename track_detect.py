@@ -372,11 +372,11 @@ if __name__ == '__main__':
     start_frame = int(args.begin_frame)
     print("dataset = {}, method = {}, channel = {}, frame_num = {}".format(dataset,method,channel,frame_num))
     #bbox file from detector
-    filename = method + "_" + dataset + ".txt"
+    filename = os.path.join('input_detections',method + "_" + dataset + ".txt")
     #source image
-    input_path = '/home/waue0920/'+dataset+'/ORIG/ch'+str(channel)
+    input_path = '/home/superorange5/MI3/'+dataset+'/ORIG/ch'+str(channel)
     #output image with bbox
-    output_folder = method + "_" + dataset + "_ch" + str(channel) + "_results"
+    output_folder = os.path.join('output',method + "_" + dataset + "_ch" + str(channel) + "_results")
 
     frameBBoxList = readFrameBBoxList(frame_num,filename,channel,detect_face,TH)
     #printFrameList(frameBBoxList)    
